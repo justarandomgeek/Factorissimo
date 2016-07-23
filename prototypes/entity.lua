@@ -1,6 +1,28 @@
 require ("prototypes.copied-from-base.demo-pipecovers")
 require ("prototypes.copied-from-base.circuit-connector-sprites")
 
+local function copyPrototype(type, name, newName, change_results)
+  if not data.raw[type][name] then error("type "..type.." "..name.." doesn't exist") end
+  local p = table.deepcopy(data.raw[type][name])
+  p.name = newName
+  if p.minable and p.minable.result then
+    p.minable.result = newName
+  end
+  if change_results then
+    if p.place_result then
+      p.place_result = newName
+    end
+    if p.result then
+      p.result = newName
+    end
+  end
+  return p
+end
+
+local relay = copyPrototype("constant-combinator","constant-combinator","relay-combinator")
+relay.item_slot_count = 250
+data:extend{relay}
+
 data:extend({
 	-- FACTORY --
 	{
