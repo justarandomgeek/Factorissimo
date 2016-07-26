@@ -5,10 +5,10 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-			{"steel-plate", 100},
-			{"stone-brick", 500},
+			{"steel-plate", 50},
+			{"stone-brick", 100},
 		},
-		energy_required = 30,
+		energy_required = 10,
 		result = "small-factory",
 		requester_paste_multiplier = 1
 	},
