@@ -12,6 +12,9 @@ data:extend({
          {
 				type = "unlock-recipe",
 				recipe = "relay-combinator"
+			},{
+				type = "unlock-recipe",
+				recipe = "small-power-plant"
 			},
 		},
 		prerequisites = {"steel-processing"},
